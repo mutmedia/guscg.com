@@ -1,6 +1,5 @@
 import React from 'react';
 import _ from 'lodash';
-
 import {Flex, Box} from 'reflexbox';
 import {
     Card,
@@ -11,31 +10,26 @@ import {
     Media,
     SectionHeader,
     Space,
+    Section,
     Text,
     Tooltip
 } from 'rebass';
 
+function openInNewTab(href) {
+    return (e) => {
+        e.preventDefault();
+        window.open(href, '_blank');
+    };
+}
+
 export default class Projects extends React.Component {
-  constructor() {
-      super();
-      this._openInNewTab = this._openInNewTab.bind(this);
-  }
-  _openInNewTab(href) {
-      return (e) => {
-          e.preventDefault();
-          window.open(href, '_blank');
-      };
-  }
+
   render() {
-      const projects = this.props.projects;
-
-      const cards = projects;
-
       return (
-          <Box>
+          <Section>
               <SectionHeader  heading="My Projects" />
               <Flex justify="center" wrap gutter={2}>
-                  {cards.map(({
+                  {_.map(this.props.projects, ({
                       image,
                       name,
                       description,
@@ -43,10 +37,10 @@ export default class Projects extends React.Component {
                       github,
                       link,
                       tags
-                  }, i) => (
-                      <Box key={i} col={12} sm={4} p={2}>
+                  }) => (
+                      <Box key={_.uniqueId('project_')} col={12} sm={4} p={2}>
                           <Card>
-                              <LinkBlock href={link} is="a" onClick={this._openInNewTab(link)}>
+                              <LinkBlock href={link} is="a" onClick={openInNewTab(link)}>
                                   <CardImage src={image}/>
                                   <Box col={12} p={1}>
                                       <Flex align='center'>
@@ -66,7 +60,7 @@ export default class Projects extends React.Component {
                                 </Box>
                                   <Box px={2}>
                                       <Tooltip inverted rounded title="See Source!">
-                                          <LinkBlock href={github} is="a" onClick={this._openInNewTab(github)}>
+                                          <LinkBlock href={github} is="a" onClick={openInNewTab(github)}>
                                               <Media img='images/GitHub-Mark-32px.png'/>
                                           </LinkBlock>
                                       </Tooltip>
@@ -76,7 +70,7 @@ export default class Projects extends React.Component {
                       </Box>
                   ))}
               </Flex>
-          </Box>
+          </Section>
       );
   }
 }

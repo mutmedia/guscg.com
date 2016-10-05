@@ -1,10 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
+import {Flex, Box} from 'reflexbox';
 import {PageHeader, Container} from 'rebass';
 
 import Programming from './Programming';
 import Title from './Title';
 import Projects from './Projects';
+import Info from './Info';
+import Footer from './Footer';
 
 import data from '../data';
 
@@ -37,8 +40,11 @@ export default class App extends React.Component {
             }}>
                 <Container>
                     <Title/>
+                    <Info />
                     <Projects {...data}/> {/* <Programming/> */}
                 </Container>
+                <Footer />
+
             </div>
         );
     }

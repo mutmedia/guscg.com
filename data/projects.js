@@ -5,7 +5,7 @@ export default [
     description: `Game Programming framework built with THREE.js, supporting
       multiplayer and a simple real time editor`,
     rating: 5,
-    tags: 'Firebase, THREE.js, javascript',
+    tags: 'THREE.js, Firebase, javascript',
     github: 'https://github.com/Ghust1995/web-game',
     link: 'https://guscg.com'
   },
@@ -32,7 +32,7 @@ export default [
   {
     image: 'images/fatdragon.png',
     name: 'Fat Dragon',
-    description: `Singleplayer or Co-op rhythm based dancing game made for
+    description: `Singleplayer or Multiplayer rhythm based dancing game made for
       Global Game Jam 2016`,
     rating: 5,
     tags: 'unity, c#',
@@ -42,7 +42,7 @@ export default [
   {
     image: 'images/monstah.png',
     name: 'Monstah Time',
-    description: `Semi co-op local multiplayer game, where one of your friends is
+    description: `Semi co-op local \'bluffing\'multiplayer game, where one of your friends is
       actually the mosnter`,
     rating: 5,
     tags: 'unity, c#',

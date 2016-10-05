@@ -39,7 +39,11 @@ fontFamily: 'Roboto, sans-serif',
     ...caps
   },
   PageHeader: { borderColor: '#111' },
-  Footer: { borderColor: '#111' },
+  Footer: {
+    borderColor: '#111',
+    backgroundColor: '#111',
+    color: '#ffffff'
+  },
   Input: {
     input: {
       backgroundColor: `rgba(255, 255, 255, 1)`
