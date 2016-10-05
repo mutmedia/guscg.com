@@ -6,7 +6,7 @@ import {PageHeader} from 'rebass';
 export default class Title extends React.Component {
     render() {
         return (
-          <PageHeader heading="Gustavo Guimaraes" description="I make games."/>
+          <PageHeader heading="Gustavo Guimaraes" description="I make games  and some other computer related stuff"/>
         );
     }
 }

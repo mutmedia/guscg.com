@@ -21478,6 +21478,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _lodash = __webpack_require__(265);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	var _rebass = __webpack_require__(173);
 
 	var _Programming = __webpack_require__(242);
@@ -21496,6 +21500,10 @@
 
 	var _data2 = _interopRequireDefault(_data);
 
+	var _mono = __webpack_require__(269);
+
+	var _mono2 = _interopRequireDefault(_mono);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21510,17 +21518,44 @@
 	    function App() {
 	        _classCallCheck(this, App);
 
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+	        _this.state = _lodash2.default.assignIn({}, _mono2.default);
+	        return _this;
 	    }
 
 	    _createClass(App, [{
+	        key: 'getChildContext',
+	        value: function getChildContext() {
+	            return { rebass: this.state };
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _state = this.state;
+	            var fontFamily = _state.fontFamily;
+	            var fontWeight = _state.fontWeight;
+	            var letterSpacing = _state.letterSpacing;
+	            var color = _state.color;
+	            var backgroundColor = _state.backgroundColor;
+
+
 	            return _react2.default.createElement(
-	                _rebass.Container,
-	                null,
-	                _react2.default.createElement(_Title2.default, null),
-	                _react2.default.createElement(_Projects2.default, _data2.default)
+	                'div',
+	                { style: {
+	                        fontFamily: fontFamily,
+	                        fontWeight: fontWeight,
+	                        letterSpacing: letterSpacing,
+	                        color: color,
+	                        backgroundColor: backgroundColor
+	                    } },
+	                _react2.default.createElement(
+	                    _rebass.Container,
+	                    null,
+	                    _react2.default.createElement(_Title2.default, null),
+	                    _react2.default.createElement(_Projects2.default, _data2.default),
+	                    ' '
+	                )
 	            );
 	        }
 	    }]);
@@ -21528,6 +21563,9 @@
 	    return App;
 	}(_react2.default.Component);
 
+	App.childContextTypes = {
+	    rebass: _react2.default.PropTypes.object
+	};
 	exports.default = App;
 
 /***/ },
@@ -30286,7 +30324,7 @@
 	    _createClass(Title, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(_rebass.PageHeader, { heading: 'Gustavo Guimaraes', description: 'I make games.' });
+	            return _react2.default.createElement(_rebass.PageHeader, { heading: 'Gustavo Guimaraes', description: 'I make games  and some other computer related stuff' });
 	        }
 	    }]);
 
@@ -30333,68 +30371,99 @@
 	    function Projects() {
 	        _classCallCheck(this, Projects);
 
-	        return _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this));
+
+	        _this._openInNewTab = _this._openInNewTab.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(Projects, [{
+	        key: '_openInNewTab',
+	        value: function _openInNewTab(href) {
+	            return function (e) {
+	                e.preventDefault();
+	                window.open(href, '_blank');
+	            };
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+
 	            var projects = this.props.projects;
 
 	            var cards = projects;
 
 	            return _react2.default.createElement(
-	                _reflexbox.Flex,
-	                { justify: 'center', wrap: true, gutter: 2 },
-	                cards.map(function (_ref, i) {
-	                    var image = _ref.image;
-	                    var name = _ref.name;
-	                    var description = _ref.description;
-	                    var rating = _ref.rating;
-	                    var github = _ref.github;
-	                    return _react2.default.createElement(
-	                        _reflexbox.Box,
-	                        { key: i, col: 12, sm: 4, p: 2 },
-	                        _react2.default.createElement(
-	                            _rebass.Card,
-	                            null,
-	                            _react2.default.createElement(_rebass.CardImage, { src: image }),
+	                _reflexbox.Box,
+	                null,
+	                _react2.default.createElement(_rebass.SectionHeader, { heading: 'My Projects' }),
+	                _react2.default.createElement(
+	                    _reflexbox.Flex,
+	                    { justify: 'center', wrap: true, gutter: 2 },
+	                    cards.map(function (_ref, i) {
+	                        var image = _ref.image;
+	                        var name = _ref.name;
+	                        var description = _ref.description;
+	                        var rating = _ref.rating;
+	                        var github = _ref.github;
+	                        var link = _ref.link;
+	                        var tags = _ref.tags;
+	                        return _react2.default.createElement(
+	                            _reflexbox.Box,
+	                            { key: i, col: 12, sm: 4, p: 2 },
 	                            _react2.default.createElement(
-	                                _reflexbox.Flex,
-	                                { align: 'center' },
-	                                _react2.default.createElement(_rebass.Heading, { children: name }),
-	                                _react2.default.createElement(_rebass.Space, { auto: true }),
-	                                ' '
-	                            ),
-	                            _react2.default.createElement(
-	                                _reflexbox.Box,
+	                                _rebass.Card,
 	                                null,
-	                                _react2.default.createElement(_rebass.Text, { small: true, children: description })
-	                            ),
-	                            _react2.default.createElement(_rebass.Divider, null),
-	                            _react2.default.createElement(
-	                                _reflexbox.Flex,
-	                                { justify: 'flex-end' },
 	                                _react2.default.createElement(
-	                                    _reflexbox.Box,
-	                                    null,
+	                                    _rebass.LinkBlock,
+	                                    { href: link, is: 'a', onClick: _this2._openInNewTab(link) },
+	                                    _react2.default.createElement(_rebass.CardImage, { src: image }),
 	                                    _react2.default.createElement(
-	                                        _rebass.Tooltip,
-	                                        { inverted: true, rounded: true, title: 'See Source!' },
+	                                        _reflexbox.Box,
+	                                        { col: 12, p: 1 },
 	                                        _react2.default.createElement(
-	                                            _rebass.LinkBlock,
-	                                            { href: '#', is: 'a', onClick: function onClick() {
-	                                                    return window.open(github, '_blank');
-	                                                } },
-	                                            _react2.default.createElement(_rebass.Media, { img: 'images/GitHub-Mark-32px.png' })
+	                                            _reflexbox.Flex,
+	                                            { align: 'center' },
+	                                            _react2.default.createElement(_rebass.Heading, { children: name }),
+	                                            _react2.default.createElement(_rebass.Space, { auto: true }),
+	                                            ' '
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            _reflexbox.Box,
+	                                            null,
+	                                            _react2.default.createElement(_rebass.Text, { children: description }),
+	                                            _react2.default.createElement(_rebass.Space, { auto: true })
 	                                        )
 	                                    )
 	                                ),
-	                                _react2.default.createElement(_reflexbox.Box, null)
+	                                _react2.default.createElement(_rebass.Divider, null),
+	                                _react2.default.createElement(
+	                                    _reflexbox.Flex,
+	                                    { align: 'center', justify: 'space-between' },
+	                                    _react2.default.createElement(
+	                                        _reflexbox.Box,
+	                                        { px: 2 },
+	                                        _react2.default.createElement(_rebass.Text, { small: true, children: tags })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reflexbox.Box,
+	                                        { px: 2 },
+	                                        _react2.default.createElement(
+	                                            _rebass.Tooltip,
+	                                            { inverted: true, rounded: true, title: 'See Source!' },
+	                                            _react2.default.createElement(
+	                                                _rebass.LinkBlock,
+	                                                { href: github, is: 'a', onClick: _this2._openInNewTab(github) },
+	                                                _react2.default.createElement(_rebass.Media, { img: 'images/GitHub-Mark-32px.png' })
+	                                            )
+	                                        )
+	                                    )
+	                                )
 	                            )
-	                        )
-	                    );
-	                })
+	                        );
+	                    })
+	                )
 	            );
 	        }
 	    }]);
@@ -39874,30 +39943,105 @@
 /* 268 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	exports.default = [{
-	  image: "images/monocular.png",
-	  name: "Monocular Rift",
-	  description: "Game made for Ludum Dare 36. Explores mechanic\n      of apparent position of objects when viewed with zoom. ",
+	  image: 'images/myengine.png',
+	  name: 'My Engine',
+	  description: 'Game Programming framework built with THREE.js, supporting\n      multiplayer and a simple real time editor',
 	  rating: 5,
-	  github: "https://github.com/Ghust1995/ld36"
+	  tags: 'Firebase, THREE.js, javascript',
+	  github: 'https://github.com/Ghust1995/web-game',
+	  link: 'https://guscg.com'
 	}, {
-	  image: "images/ddd1440.jpg",
-	  name: "DDD 1440",
-	  description: "Game made for Ludum Dare 35. Multiplayer sumo brawler with nice\n      minimalist aesthetics and simple yet deep mechanics",
-	  rating: 4,
-	  github: "https://github.com/Ghust1995/LD35Shapeshift"
-	}, {
-	  image: "images/myengine.png",
-	  name: "My Engine",
-	  description: "Game Programming framework built with THREE.js, supporting\n      multiplayer and a simple real time editor. ",
+	  image: 'images/monocular.png',
+	  name: 'Monocular Rift',
+	  description: 'Game made for Ludum Dare 36. Explores mechanic\n      of apparent position of objects when zoomed-in',
 	  rating: 5,
-	  github: "https://github.com/Ghust1995/web-game"
+	  tags: 'unity, c#',
+	  github: 'https://github.com/Ghust1995/ld36',
+	  link: 'https://ghust1995.itch.io/monocular-rift'
+	}, {
+	  image: 'images/ddd1440.jpg',
+	  name: 'DDD 1440',
+	  description: 'Game made for Ludum Dare 35. Local multiplayer sumo brawler\n      with nice minimalist aesthetics',
+	  rating: 5,
+	  tags: 'unity, c#',
+	  github: 'https://github.com/Ghust1995/LD35Shapeshift',
+	  link: 'https://ghust1995.itch.io/ddd1440'
+	}, {
+	  image: 'images/fatdragon.png',
+	  name: 'Fat Dragon',
+	  description: 'Singleplayer or Co-op rhythm based dancing game made for\n      Global Game Jam 2016',
+	  rating: 5,
+	  tags: 'unity, c#',
+	  github: 'https://github.com/Ghust1995/GGJFatDragon',
+	  link: 'https://ghust1995.itch.io/fat-dragon'
+	}, {
+	  image: 'images/monstah.png',
+	  name: 'Monstah Time',
+	  description: 'Semi co-op local multiplayer game, where one of your friends is\n      actually the mosnter',
+	  rating: 5,
+	  tags: 'unity, c#',
+	  github: 'https://github.com/alexandremuzio/yatm',
+	  link: 'https://ghust1995.itch.io/monstah-time'
 	}];
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _rebass = __webpack_require__(173);
+
+	var caps = {
+	  textTransform: 'uppercase',
+	  letterSpacing: '.06em'
+	};
+
+	var mono = {
+
+	  fontFamily: 'Roboto, sans-serif',
+	  color: '#111',
+	  backgroundColor: '#fff',
+
+	  scale: [0, 6, 12, 24, 36, 48],
+
+	  fontSizes: [64, 24, 20, 18, 14, 12, 11],
+
+	  borderColor: 'rgba(0, 0, 0, ' + 1 + ')',
+	  borderRadius: '6px',
+
+	  colors: _extends({}, _rebass.config.colors, {
+	    primary: '#111'
+	  }),
+
+	  Heading: _extends({
+	    fontFamily: 'inherit'
+	  }, caps),
+
+	  Button: _extends({}, caps),
+	  NavItem: _extends({}, caps),
+	  PageHeader: { borderColor: '#111' },
+	  Footer: { borderColor: '#111' },
+	  Input: {
+	    input: {
+	      backgroundColor: 'rgba(255, 255, 255, 1)'
+	    }
+	  }
+	};
+
+	exports.default = mono;
 
 /***/ }
 /******/ ]);
