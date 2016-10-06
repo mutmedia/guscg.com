@@ -8,7 +8,7 @@ const favoriteGames = [
   'Braid',
   'Portal',
   'The Witness',
-  'sSmash Bros (?!)'
+  'Smash Bros (?!)'
 ];
 
 class StringWithTooltips extends React.Component {
