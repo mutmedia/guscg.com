@@ -21502,15 +21502,15 @@
 
 	var _Info2 = _interopRequireDefault(_Info);
 
-	var _Footer = __webpack_require__(324);
+	var _Footer = __webpack_require__(270);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _data = __webpack_require__(325);
+	var _data = __webpack_require__(271);
 
 	var _data2 = _interopRequireDefault(_data);
 
-	var _mono = __webpack_require__(327);
+	var _mono = __webpack_require__(273);
 
 	var _mono2 = _interopRequireDefault(_mono);
 
@@ -40047,7 +40047,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var favoriteGames = ["Stephen's Sausage Roll", 'Braid', 'Portal', 'The Witness', 'sSmash Bros (?!)'];
+	var favoriteGames = ["Stephen's Sausage Roll", 'Braid', 'Portal', 'The Witness', 'Smash Bros (?!)'];
 
 	var StringWithTooltips = function (_React$Component) {
 	  _inherits(StringWithTooltips, _React$Component);
@@ -40114,7 +40114,7 @@
 	        _react2.default.createElement(
 	          _rebass.Text,
 	          null,
-	          'I am a Computer Engineering Student at ITA, in Brazil. I really like learning new stuff, specially if it will help me make my games feel/look/play better. I find game design a very interesting field, thinking about the player experience and learning during gameplay is awesome!'
+	          'I am a Computer Engineering Student in Brazil. I really like learning new stuff, specially if it will help me make my games feel/look/play better. I find game design a very interesting field, thinking about the player experience and learning during gameplay is awesome!'
 	        ),
 	        _react2.default.createElement(StringWithTooltips, { string: 'Puzzle games with narrative or exploration are my favorites!' })
 	      );
@@ -40254,61 +40254,7 @@
 	exports.default = Title;
 
 /***/ },
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40373,7 +40319,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 325 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40382,7 +40328,7 @@
 	  value: true
 	});
 
-	var _projects = __webpack_require__(326);
+	var _projects = __webpack_require__(272);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -40393,7 +40339,7 @@
 	};
 
 /***/ },
-/* 326 */
+/* 272 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -40412,7 +40358,7 @@
 	}, {
 	  image: 'images/monocular.png',
 	  name: 'Monocular Rift',
-	  description: 'Game made for Ludum Dare 36. Explores mechanic\n      of apparent position of objects when zoomed-in',
+	  description: 'Game that explores a mechanic\n      of apparent position of objects when zoomed-in. Made for Ludum Dare 36. ',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/Ghust1995/ld36',
@@ -40420,7 +40366,7 @@
 	}, {
 	  image: 'images/ddd1440.png',
 	  name: 'DDD 1440',
-	  description: 'Game made for Ludum Dare 35. Local multiplayer sumo brawler\n      with nice minimalist aesthetics and simple yet deep mechanics',
+	  description: 'Local multiplayer sumo brawler\n      with nice minimalist aesthetics and simple yet deep mechanics. Made for Ludum Dare 35. ',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/Ghust1995/LD35Shapeshift',
@@ -40428,7 +40374,7 @@
 	}, {
 	  image: 'images/fatdragon.png',
 	  name: 'Fat Dragon',
-	  description: 'Singleplayer or Co-op rhythm based dancing game made for\n      Global Game Jam 2016',
+	  description: 'Singleplayer or Co-op rhythm based dancing game. Made for\n      Global Game Jam 2016',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/Ghust1995/GGJFatDragon',
@@ -40436,7 +40382,7 @@
 	}, {
 	  image: 'images/monstah.png',
 	  name: 'Monstah Time',
-	  description: '\'Semi\' co-op local multiplayer game, where one of your friends is\n      actually the monster',
+	  description: '\'Semi\' co-op local multiplayer game, where one of your friends is\n      actually the monster. Made for Ludum Dare 33',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/alexandremuzio/yatm',
@@ -40444,7 +40390,7 @@
 	}];
 
 /***/ },
-/* 327 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
