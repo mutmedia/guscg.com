@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionHeader, Section, LinkBlock} from 'rebass';
+import {SectionHeader, Section, LinkBlock, Text} from 'rebass';
 import {Flex, Box} from 'reflexbox';
 
 //import {openInNewTab} from '../helpers';
@@ -11,48 +11,48 @@ function openInNewTab(href) {
 }
 
 class ContactLink extends React.Component {
-  render() {
-    return (
-      <LinkBlock href={this.props.link} is='a' onClick={openInNewTab(this.props.link)}>
-        <Flex justify="space-between">
-          <Box>
-            {this.props.name}:
-          </Box>
-          <Box>
-            {this.props.shortLink}
-          </Box>
-        </Flex>
-      </LinkBlock>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            bold: false
+        };
+    }
+    render() {
+        return (
+            <LinkBlock
+              mb={2}
+              href={this.props.link}
+              is='a'
+              onClick={openInNewTab(this.props.link)}
+              onMouseEnter={() => this.setState({bold: true})}
+              onMouseLeave={() => this.setState({bold: false})}>
+                <Flex justify="space-between">
+                    <Box>
+                        <Text bold={this.state.bold}>
+                            {this.props.name}:
+                        </Text>
+                    </Box>
+                    <Box>
+                        <Text bold={this.state.bold}>
+                            {this.props.shortLink}
+                        </Text>
+                    </Box>
+                </Flex>
+            </LinkBlock>
+        );
+    }
 }
 
 export default class Title extends React.Component {
     render() {
         return (
-          <Section>
-              <SectionHeader heading='Contact' />
-              <ContactLink
-                name='email'
-                link='https://twitter.com/Ghust95'
-                shortLink='gustavo.ceci95@gmail.com'
-              />
-              <ContactLink
-                name='twitter'
-                link='mailto:gustavo.ceci95@gmail.com'
-                shortLink='@Ghust95'
-              />
-              <ContactLink
-                name='github'
-                link='https://github.com/Ghust1995'
-                shortLink='github.com/Ghust1995'
-              />
-              <ContactLink
-                name='linkedIn'
-                link='https://www.linkedin.com/in/gustavoceci95'
-                shortLink='linkedin.com/in/gustavoceci95'
-              />
-          </Section>
+            <Section>
+                <SectionHeader mt={0} heading='Contact'/>
+                <ContactLink name='email' link='https://twitter.com/Ghust95' shortLink='gustavo.ceci95@gmail.com'/>
+                <ContactLink name='twitter' link='mailto:gustavo.ceci95@gmail.com' shortLink='@Ghust95'/>
+                <ContactLink name='github' link='https://github.com/Ghust1995' shortLink='github.com/Ghust1995'/>
+                <ContactLink name='linkedIn' link='https://www.linkedin.com/in/gustavoceci95' shortLink='linkedin.com/in/gustavoceci95'/>
+            </Section>
         );
     }
 }

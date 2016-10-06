@@ -42,8 +42,8 @@ export default class App extends React.Component {
                     <Title/>
                     <Info />
                     <Projects {...data}/> {/* <Programming/> */}
+                    <Footer />
                 </Container>
-                <Footer />
 
             </div>
         );

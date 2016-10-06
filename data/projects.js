@@ -20,10 +20,10 @@ export default [
     link: 'https://ghust1995.itch.io/monocular-rift'
   },
   {
-    image: 'images/ddd1440.jpg',
+    image: 'images/ddd1440.png',
     name: 'DDD 1440',
     description: `Game made for Ludum Dare 35. Local multiplayer sumo brawler
-      with nice minimalist aesthetics`,
+      with nice minimalist aesthetics and simple yet deep mechanics`,
     rating: 5,
     tags: 'unity, c#',
     github: 'https://github.com/Ghust1995/LD35Shapeshift',
@@ -32,7 +32,7 @@ export default [
   {
     image: 'images/fatdragon.png',
     name: 'Fat Dragon',
-    description: `Singleplayer or Multiplayer rhythm based dancing game made for
+    description: `Singleplayer or Co-op rhythm based dancing game made for
       Global Game Jam 2016`,
     rating: 5,
     tags: 'unity, c#',
@@ -42,8 +42,8 @@ export default [
   {
     image: 'images/monstah.png',
     name: 'Monstah Time',
-    description: `Semi co-op local \'bluffing\'multiplayer game, where one of your friends is
-      actually the mosnter`,
+    description: `'Semi' co-op local multiplayer game, where one of your friends is
+      actually the monster`,
     rating: 5,
     tags: 'unity, c#',
     github: 'https://github.com/alexandremuzio/yatm',

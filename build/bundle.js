@@ -21565,9 +21565,9 @@
 	                    _react2.default.createElement(_Title2.default, null),
 	                    _react2.default.createElement(_Info2.default, null),
 	                    _react2.default.createElement(_Projects2.default, _data2.default),
-	                    ' '
-	                ),
-	                _react2.default.createElement(_Footer2.default, null)
+	                    ' ',
+	                    _react2.default.createElement(_Footer2.default, null)
+	                )
 	            );
 	        }
 	    }]);
@@ -39780,7 +39780,7 @@
 	    _createClass(Title, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(_rebass.PageHeader, { heading: 'Gustavo Guimaraes', description: 'Making games and other cool computer related stuff' });
+	            return _react2.default.createElement(_rebass.PageHeader, { mb: 0, heading: 'Gustavo Guimaraes', description: 'Making games and other cool computer related stuff' });
 	        }
 	    }]);
 
@@ -39828,8 +39828,87 @@
 	    };
 	}
 
-	var Projects = function (_React$Component) {
-	    _inherits(Projects, _React$Component);
+	var ProjectCard = function (_React$Component) {
+	    _inherits(ProjectCard, _React$Component);
+
+	    function ProjectCard() {
+	        _classCallCheck(this, ProjectCard);
+
+	        return _possibleConstructorReturn(this, (ProjectCard.__proto__ || Object.getPrototypeOf(ProjectCard)).apply(this, arguments));
+	    }
+
+	    _createClass(ProjectCard, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var image = _props.image;
+	            var name = _props.name;
+	            var description = _props.description;
+	            var github = _props.github;
+	            var link = _props.link;
+	            var tags = _props.tags;
+
+	            return _react2.default.createElement(
+	                _rebass.Card,
+	                null,
+	                _react2.default.createElement(
+	                    _rebass.LinkBlock,
+	                    { href: link, is: 'a', onClick: openInNewTab(link) },
+	                    _react2.default.createElement(_rebass.CardImage, { src: image }),
+	                    _react2.default.createElement(
+	                        _reflexbox.Box,
+	                        { col: 12, p: 1 },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { style: { height: 100 } },
+	                            _react2.default.createElement(
+	                                _reflexbox.Flex,
+	                                { align: 'center' },
+	                                _react2.default.createElement(_rebass.Heading, { children: name }),
+	                                _react2.default.createElement(_rebass.Space, { auto: true }),
+	                                ' '
+	                            ),
+	                            _react2.default.createElement(
+	                                _reflexbox.Box,
+	                                null,
+	                                _react2.default.createElement(_rebass.Text, { children: description }),
+	                                _react2.default.createElement(_rebass.Space, { auto: true })
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_rebass.Divider, null),
+	                _react2.default.createElement(
+	                    _reflexbox.Flex,
+	                    { align: 'center', justify: 'space-between' },
+	                    _react2.default.createElement(
+	                        _reflexbox.Box,
+	                        { px: 2 },
+	                        _react2.default.createElement(_rebass.Text, { small: true, children: tags })
+	                    ),
+	                    _react2.default.createElement(
+	                        _reflexbox.Box,
+	                        { px: 2 },
+	                        _react2.default.createElement(
+	                            _rebass.Tooltip,
+	                            { inverted: true, rounded: true, title: 'See Source!' },
+	                            _react2.default.createElement(
+	                                _rebass.LinkBlock,
+	                                { href: github, is: 'a', onClick: openInNewTab(github) },
+	                                _react2.default.createElement(_rebass.Media, { img: 'images/GitHub-Mark-32px.png' })
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ProjectCard;
+	}(_react2.default.Component);
+
+	var Projects = function (_React$Component2) {
+	    _inherits(Projects, _React$Component2);
 
 	    function Projects() {
 	        _classCallCheck(this, Projects);
@@ -39840,74 +39919,23 @@
 	    _createClass(Projects, [{
 	        key: 'render',
 	        value: function render() {
+	            var emptyBoxes = this.props.projects.length % 3;
 	            return _react2.default.createElement(
 	                _rebass.Section,
 	                null,
-	                _react2.default.createElement(_rebass.SectionHeader, { heading: 'My Projects' }),
+	                _react2.default.createElement(_rebass.SectionHeader, { mt: 0, heading: 'My Projects' }),
 	                _react2.default.createElement(
 	                    _reflexbox.Flex,
 	                    { justify: 'center', wrap: true, gutter: 2 },
-	                    _lodash2.default.map(this.props.projects, function (_ref) {
-	                        var image = _ref.image;
-	                        var name = _ref.name;
-	                        var description = _ref.description;
-	                        var rating = _ref.rating;
-	                        var github = _ref.github;
-	                        var link = _ref.link;
-	                        var tags = _ref.tags;
+	                    _lodash2.default.map(this.props.projects, function (project) {
 	                        return _react2.default.createElement(
 	                            _reflexbox.Box,
 	                            { key: _lodash2.default.uniqueId('project_'), col: 12, sm: 4, p: 2 },
-	                            _react2.default.createElement(
-	                                _rebass.Card,
-	                                null,
-	                                _react2.default.createElement(
-	                                    _rebass.LinkBlock,
-	                                    { href: link, is: 'a', onClick: openInNewTab(link) },
-	                                    _react2.default.createElement(_rebass.CardImage, { src: image }),
-	                                    _react2.default.createElement(
-	                                        _reflexbox.Box,
-	                                        { col: 12, p: 1 },
-	                                        _react2.default.createElement(
-	                                            _reflexbox.Flex,
-	                                            { align: 'center' },
-	                                            _react2.default.createElement(_rebass.Heading, { children: name }),
-	                                            _react2.default.createElement(_rebass.Space, { auto: true }),
-	                                            ' '
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            _reflexbox.Box,
-	                                            null,
-	                                            _react2.default.createElement(_rebass.Text, { children: description }),
-	                                            _react2.default.createElement(_rebass.Space, { auto: true })
-	                                        )
-	                                    )
-	                                ),
-	                                _react2.default.createElement(_rebass.Divider, null),
-	                                _react2.default.createElement(
-	                                    _reflexbox.Flex,
-	                                    { align: 'center', justify: 'space-between' },
-	                                    _react2.default.createElement(
-	                                        _reflexbox.Box,
-	                                        { px: 2 },
-	                                        _react2.default.createElement(_rebass.Text, { small: true, children: tags })
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        _reflexbox.Box,
-	                                        { px: 2 },
-	                                        _react2.default.createElement(
-	                                            _rebass.Tooltip,
-	                                            { inverted: true, rounded: true, title: 'See Source!' },
-	                                            _react2.default.createElement(
-	                                                _rebass.LinkBlock,
-	                                                { href: github, is: 'a', onClick: openInNewTab(github) },
-	                                                _react2.default.createElement(_rebass.Media, { img: 'images/GitHub-Mark-32px.png' })
-	                                            )
-	                                        )
-	                                    )
-	                                )
-	                            )
+	                            _react2.default.createElement(ProjectCard, project)
 	                        );
+	                    }),
+	                    _lodash2.default.map(_lodash2.default.range(emptyBoxes), function () {
+	                        return _react2.default.createElement(_reflexbox.Box, { key: _lodash2.default.uniqueId('project_'), col: 12, sm: 4, p: 2 });
 	                    })
 	                )
 	            );
@@ -39969,15 +39997,15 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        _reflexbox.Flex,
-	        { gutter: 2 },
+	        { wrap: true, gutter: 2 },
 	        _react2.default.createElement(
 	          _reflexbox.Box,
-	          { col: 12, sm: 6, p: 2 },
+	          { col: 12, sm: 6, px: 2 },
 	          _react2.default.createElement(_About2.default, null)
 	        ),
 	        _react2.default.createElement(
 	          _reflexbox.Box,
-	          { col: 12, sm: 6, p: 2 },
+	          { col: 12, sm: 6, px: 2 },
 	          _react2.default.createElement(_Contact2.default, null)
 	        )
 	      );
@@ -39996,7 +40024,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -40007,6 +40035,10 @@
 
 	var _rebass = __webpack_require__(196);
 
+	var _lodash = __webpack_require__(173);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40015,30 +40047,81 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	//import _ from 'lodash';
+	var favoriteGames = ["Stephen's Sausage Roll", 'Braid', 'Portal', 'The Witness', 'sSmash Bros (?!)'];
 
-	var Title = function (_React$Component) {
-	    _inherits(Title, _React$Component);
+	var StringWithTooltips = function (_React$Component) {
+	  _inherits(StringWithTooltips, _React$Component);
 
-	    function Title() {
-	        _classCallCheck(this, Title);
+	  function StringWithTooltips() {
+	    _classCallCheck(this, StringWithTooltips);
 
-	        return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
-	    }
+	    return _possibleConstructorReturn(this, (StringWithTooltips.__proto__ || Object.getPrototypeOf(StringWithTooltips)).apply(this, arguments));
+	  }
 
-	    _createClass(Title, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                _rebass.Section,
-	                null,
-	                _react2.default.createElement(_rebass.SectionHeader, { heading: 'About' }),
-	                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur tortor ac dictum finibus. Curabitur pharetra lectus eget sem pharetra, eu suscipit elit condimentum. Etiam vel ullamcorper urna. Phasellus accumsan gravida lectus, sit amet ullamcorper tellus. Aliquam eu porta metus, vitae venenatis velit.'
-	            );
+	  _createClass(StringWithTooltips, [{
+	    key: 'render',
+	    value: function render() {
+	      var games = _lodash2.default.clone(favoriteGames);
+	      var words = _lodash2.default.map(_lodash2.default.words(this.props.string), function (word) {
+	        var component = word + ' ';
+	        if (word.length > 4) {
+	          var game = games[0];
+	          games = _lodash2.default.drop(games);
+	          component = _react2.default.createElement(
+	            'span',
+	            null,
+	            _react2.default.createElement(
+	              _rebass.Tooltip,
+	              { inverted: true, rounded: true, title: game },
+	              component
+	            ),
+	            ' '
+	          );
 	        }
-	    }]);
+	        return _react2.default.createElement(
+	          'span',
+	          null,
+	          component
+	        );
+	      });
+	      return _react2.default.createElement(
+	        _rebass.Text,
+	        null,
+	        words
+	      );
+	    }
+	  }]);
 
-	    return Title;
+	  return StringWithTooltips;
+	}(_react2.default.Component);
+
+	var Title = function (_React$Component2) {
+	  _inherits(Title, _React$Component2);
+
+	  function Title() {
+	    _classCallCheck(this, Title);
+
+	    return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
+	  }
+
+	  _createClass(Title, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _rebass.Section,
+	        null,
+	        _react2.default.createElement(_rebass.SectionHeader, { mt: 0, heading: 'About' }),
+	        _react2.default.createElement(
+	          _rebass.Text,
+	          null,
+	          'I am a Computer Engineering Student at ITA, in Brazil. I really like learning new stuff, specially if it will help me make my games feel/look/play better. I find game design a very interesting field, thinking about the player experience and learning during gameplay is awesome!'
+	        ),
+	        _react2.default.createElement(StringWithTooltips, { string: 'Puzzle games with narrative or exploration are my favorites!' })
+	      );
+	    }
+	  }]);
+
+	  return Title;
 	}(_react2.default.Component);
 
 	exports.default = Title;
@@ -40050,7 +40133,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -40073,90 +40156,99 @@
 
 	//import {openInNewTab} from '../helpers';
 	function openInNewTab(href) {
-	  return function (e) {
-	    e.preventDefault();
-	    window.open(href, '_blank');
-	  };
+	    return function (e) {
+	        e.preventDefault();
+	        window.open(href, '_blank');
+	    };
 	}
 
 	var ContactLink = function (_React$Component) {
-	  _inherits(ContactLink, _React$Component);
+	    _inherits(ContactLink, _React$Component);
 
-	  function ContactLink() {
-	    _classCallCheck(this, ContactLink);
+	    function ContactLink() {
+	        _classCallCheck(this, ContactLink);
 
-	    return _possibleConstructorReturn(this, (ContactLink.__proto__ || Object.getPrototypeOf(ContactLink)).apply(this, arguments));
-	  }
+	        var _this = _possibleConstructorReturn(this, (ContactLink.__proto__ || Object.getPrototypeOf(ContactLink)).call(this));
 
-	  _createClass(ContactLink, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        _rebass.LinkBlock,
-	        { href: this.props.link, is: 'a', onClick: openInNewTab(this.props.link) },
-	        _react2.default.createElement(
-	          _reflexbox.Flex,
-	          { justify: 'space-between' },
-	          _react2.default.createElement(
-	            _reflexbox.Box,
-	            null,
-	            this.props.name,
-	            ':'
-	          ),
-	          _react2.default.createElement(
-	            _reflexbox.Box,
-	            null,
-	            this.props.shortLink
-	          )
-	        )
-	      );
+	        _this.state = {
+	            bold: false
+	        };
+	        return _this;
 	    }
-	  }]);
 
-	  return ContactLink;
+	    _createClass(ContactLink, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                _rebass.LinkBlock,
+	                {
+	                    mb: 2,
+	                    href: this.props.link,
+	                    is: 'a',
+	                    onClick: openInNewTab(this.props.link),
+	                    onMouseEnter: function onMouseEnter() {
+	                        return _this2.setState({ bold: true });
+	                    },
+	                    onMouseLeave: function onMouseLeave() {
+	                        return _this2.setState({ bold: false });
+	                    } },
+	                _react2.default.createElement(
+	                    _reflexbox.Flex,
+	                    { justify: 'space-between' },
+	                    _react2.default.createElement(
+	                        _reflexbox.Box,
+	                        null,
+	                        _react2.default.createElement(
+	                            _rebass.Text,
+	                            { bold: this.state.bold },
+	                            this.props.name,
+	                            ':'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reflexbox.Box,
+	                        null,
+	                        _react2.default.createElement(
+	                            _rebass.Text,
+	                            { bold: this.state.bold },
+	                            this.props.shortLink
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ContactLink;
 	}(_react2.default.Component);
 
 	var Title = function (_React$Component2) {
-	  _inherits(Title, _React$Component2);
+	    _inherits(Title, _React$Component2);
 
-	  function Title() {
-	    _classCallCheck(this, Title);
+	    function Title() {
+	        _classCallCheck(this, Title);
 
-	    return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
-	  }
-
-	  _createClass(Title, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        _rebass.Section,
-	        null,
-	        _react2.default.createElement(_rebass.SectionHeader, { heading: 'Contact' }),
-	        _react2.default.createElement(ContactLink, {
-	          name: 'email',
-	          link: 'https://twitter.com/Ghust95',
-	          shortLink: 'gustavo.ceci95@gmail.com'
-	        }),
-	        _react2.default.createElement(ContactLink, {
-	          name: 'twitter',
-	          link: 'mailto:gustavo.ceci95@gmail.com',
-	          shortLink: '@Ghust95'
-	        }),
-	        _react2.default.createElement(ContactLink, {
-	          name: 'github',
-	          link: 'https://github.com/Ghust1995',
-	          shortLink: 'github.com/Ghust1995'
-	        }),
-	        _react2.default.createElement(ContactLink, {
-	          name: 'linkedIn',
-	          link: 'https://www.linkedin.com/in/gustavoceci95',
-	          shortLink: 'linkedin.com/in/gustavoceci95'
-	        })
-	      );
+	        return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return Title;
+	    _createClass(Title, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                _rebass.Section,
+	                null,
+	                _react2.default.createElement(_rebass.SectionHeader, { mt: 0, heading: 'Contact' }),
+	                _react2.default.createElement(ContactLink, { name: 'email', link: 'https://twitter.com/Ghust95', shortLink: 'gustavo.ceci95@gmail.com' }),
+	                _react2.default.createElement(ContactLink, { name: 'twitter', link: 'mailto:gustavo.ceci95@gmail.com', shortLink: '@Ghust95' }),
+	                _react2.default.createElement(ContactLink, { name: 'github', link: 'https://github.com/Ghust1995', shortLink: 'github.com/Ghust1995' }),
+	                _react2.default.createElement(ContactLink, { name: 'linkedIn', link: 'https://www.linkedin.com/in/gustavoceci95', shortLink: 'linkedin.com/in/gustavoceci95' })
+	            );
+	        }
+	    }]);
+
+	    return Title;
 	}(_react2.default.Component);
 
 	exports.default = Title;
@@ -40258,8 +40350,9 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                _rebass.Footer,
-	                { mt: 4, color: 'white', backgroundColor: 'black' },
+	                _rebass.Section,
+	                null,
+	                _react2.default.createElement(_rebass.Divider, null),
 	                _react2.default.createElement(
 	                    _reflexbox.Flex,
 	                    { justify: 'space-between' },
@@ -40325,9 +40418,9 @@
 	  github: 'https://github.com/Ghust1995/ld36',
 	  link: 'https://ghust1995.itch.io/monocular-rift'
 	}, {
-	  image: 'images/ddd1440.jpg',
+	  image: 'images/ddd1440.png',
 	  name: 'DDD 1440',
-	  description: 'Game made for Ludum Dare 35. Local multiplayer sumo brawler\n      with nice minimalist aesthetics',
+	  description: 'Game made for Ludum Dare 35. Local multiplayer sumo brawler\n      with nice minimalist aesthetics and simple yet deep mechanics',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/Ghust1995/LD35Shapeshift',
@@ -40335,7 +40428,7 @@
 	}, {
 	  image: 'images/fatdragon.png',
 	  name: 'Fat Dragon',
-	  description: 'Singleplayer or Multiplayer rhythm based dancing game made for\n      Global Game Jam 2016',
+	  description: 'Singleplayer or Co-op rhythm based dancing game made for\n      Global Game Jam 2016',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/Ghust1995/GGJFatDragon',
@@ -40343,7 +40436,7 @@
 	}, {
 	  image: 'images/monstah.png',
 	  name: 'Monstah Time',
-	  description: 'Semi co-op local \'bluffing\'multiplayer game, where one of your friends is\n      actually the mosnter',
+	  description: '\'Semi\' co-op local multiplayer game, where one of your friends is\n      actually the monster',
 	  rating: 5,
 	  tags: 'unity, c#',
 	  github: 'https://github.com/alexandremuzio/yatm',

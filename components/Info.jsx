@@ -10,11 +10,11 @@ import Contact from './Contact';
 export default class Title extends React.Component {
     render() {
         return (
-          <Flex gutter={2}>
-            <Box col={12} sm={6} p={2}>
+          <Flex wrap gutter={2}>
+            <Box col={12} sm={6} px={2}>
               <About />
             </Box>
-            <Box col={12} sm={6} p={2}>
+            <Box col={12} sm={6} px={2}>
               <Contact />
             </Box>
           </Flex>
