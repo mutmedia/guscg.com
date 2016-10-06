@@ -48,8 +48,8 @@ export default class Title extends React.Component {
         return (
             <Section>
                 <SectionHeader mt={0} heading='Contact'/>
-                <ContactLink name='email' link='https://twitter.com/Ghust95' shortLink='gustavo.ceci95@gmail.com'/>
-                <ContactLink name='twitter' link='mailto:gustavo.ceci95@gmail.com' shortLink='@Ghust95'/>
+                <ContactLink name='email' link='mailto:gustavo.ceci95@gmail.com' shortLink='gustavo.ceci95@gmail.com'/>
+                <ContactLink name='twitter' link='https://twitter.com/Ghust95' shortLink='@Ghust95'/>
                 <ContactLink name='github' link='https://github.com/Ghust1995' shortLink='github.com/Ghust1995'/>
                 <ContactLink name='linkedIn' link='https://www.linkedin.com/in/gustavoceci95' shortLink='linkedin.com/in/gustavoceci95'/>
             </Section>
