@@ -37,7 +37,7 @@ export default class Title extends React.Component {
           <Section>
             <SectionHeader mt={0} heading="About" />
               <Text>
-                I am a Computer Engineering Student at ITA, in Brazil.
+                I am a Computer Engineering Student in Brazil.
                 I really like learning new stuff, specially if it will help me make my games feel/look/play better.
                 I find game design a very interesting field, thinking about the player experience and learning during gameplay is awesome!
               </Text>
