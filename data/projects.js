@@ -5,7 +5,7 @@ export default [
     description: `Game Programming framework built with THREE.js, supporting
       multiplayer and a simple real time editor`,
     rating: 5,
-    tags: 'THREE.js, Firebase, javascript',
+    tags: 'THREE.js, React.js, Firebase, javascript',
     github: 'https://github.com/Ghust1995/web-game',
     link: 'https://guscg.com'
   },
@@ -48,5 +48,15 @@ export default [
     tags: 'unity, c#',
     github: 'https://github.com/alexandremuzio/yatm',
     link: 'https://ghust1995.itch.io/monstah-time'
+  },
+  {
+    image: 'images/console.png',
+    name: 'Console Renderer',
+    description: `A library for rendering images and triangles (3d graphics soon!?)
+      on a windows console`,
+    rating: 5,
+    tags: 'windows, c++',
+    github: 'https://github.com/Ghust1995/ConsoleRenderer',
+    link: 'https://github.com/Ghust1995/ConsoleRenderer'
   }
 ];
