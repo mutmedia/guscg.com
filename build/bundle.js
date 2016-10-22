@@ -39404,7 +39404,7 @@
 	  github: 'https://github.com/alexandremuzio/yatm',
 	  link: 'https://ghust1995.itch.io/monstah-time'
 	}, {
-	  image: 'images/console.png',
+	  image: 'images/renderer.png',
 	  name: 'Console Renderer',
 	  description: 'A library for rendering images and triangles (3d graphics soon!?)\n      on a windows console',
 	  rating: 5,

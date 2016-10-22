@@ -50,7 +50,7 @@ export default [
     link: 'https://ghust1995.itch.io/monstah-time'
   },
   {
-    image: 'images/console.png',
+    image: 'images/renderer.png',
     name: 'Console Renderer',
     description: `A library for rendering images and triangles (3d graphics soon!?)
       on a windows console`,
