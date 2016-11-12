@@ -20,6 +20,16 @@ export default [
     link: 'https://ghust1995.itch.io/monocular-rift'
   },
   {
+    image: 'images/renderer.png',
+    name: 'Console Renderer',
+    description: `A library for rendering images and triangles (3d graphics soon!?)
+      on a windows console`,
+    rating: 5,
+    tags: 'windows, c++',
+    github: 'https://github.com/Ghust1995/ConsoleRenderer',
+    link: 'https://github.com/Ghust1995/ConsoleRenderer'
+  },
+  {
     image: 'images/ddd1440.png',
     name: 'DDD 1440',
     description: `Local multiplayer sumo brawler
@@ -40,6 +50,16 @@ export default [
     link: 'https://ghust1995.itch.io/fat-dragon'
   },
   {
+    image: 'images/revolution10.png',
+    name: 'Revolution Ten',
+    description: `Skill based single player game with multiple interacting skills.
+     Made for  Kongregate Game Jam`,
+    rating: 5,
+    tags: 'unity, c#',
+    github: 'https://github.com/Ghust1995/number10',
+    link: 'http://www.kongregate.com/games/Ghust1995/revolution-10'
+  },
+  {
     image: 'images/monstah.png',
     name: 'Monstah Time',
     description: `'Semi' co-op local multiplayer game, where one of your friends is
@@ -48,15 +68,5 @@ export default [
     tags: 'unity, c#',
     github: 'https://github.com/alexandremuzio/yatm',
     link: 'https://ghust1995.itch.io/monstah-time'
-  },
-  {
-    image: 'images/renderer.png',
-    name: 'Console Renderer',
-    description: `A library for rendering images and triangles (3d graphics soon!?)
-      on a windows console`,
-    rating: 5,
-    tags: 'windows, c++',
-    github: 'https://github.com/Ghust1995/ConsoleRenderer',
-    link: 'https://github.com/Ghust1995/ConsoleRenderer'
   }
 ];
